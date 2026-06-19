@@ -26,10 +26,38 @@ function cortarCaracteres(parametro, num){
 
 }
 
-console.log(cortarCaracteres("Hola Mundo" ,4))
+//console.log(cortarCaracteres("Hola Mundo" ,4))
 
 //3) Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe. miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'].
 
+function pasarStringaArray(parametro){
 
+    let conversion = String(parametro);
+
+    let arreglo = parametro.split(" ");
+
+    return arreglo;
+
+}
+
+//console.log(pasarStringaArray("400 veces 30"))
 
 //4) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.
+
+function repetirTexto(parametro,num){
+
+    let conversion = String(parametro);
+
+    let cadenaFinal = "";
+
+    for (let i = 0; i < num; i++) {
+
+        cadenaFinal += conversion + " "
+
+    }
+
+    return cadenaFinal;
+
+}
+
+console.log(repetirTexto("Me Gusta el Pico",10))
