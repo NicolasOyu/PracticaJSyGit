@@ -64,8 +64,79 @@ function repetirTexto(parametro,num){
 
 //5) Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".
 
+function invertirPalabra (palabra){
+
+    let palabraInvertida = "";
+
+    if (typeof palabra !== "string") {
+        return "El dato ingresado no es una cadena";
+    }
+
+    let longitud = palabra.length-1;
+
+    for (let i = longitud; i >= 0; i--) {
+
+        let caracter = palabra[i];
+
+        palabraInvertida += caracter
+
+    }
+
+    return palabraInvertida
+
+}
+
+//console.log(invertirPalabra("Hola"))
+
 //6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
+
+function contarPalabra(texto, palabra){
+
+return texto.split(palabra).length - 1;
+
+}
+
+//console.log(contarPalabra("JavaScript es genial. Me encanta JavaScript, ¡sí, JavaScript!","JavaScript"))
 
 //7) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true.
 
+function polindromo(texto){
+
+    if (typeof texto !== "string") {
+        return "El dato ingresado no es una cadena";
+    }
+
+    let puntero = texto.length-1;
+
+    let palabraN = "";
+
+    for (let i = puntero; i >= 0; i--) {
+
+        let caracter = texto[i];
+
+        palabraN += caracter
+    }
+
+    if (texto === palabraN){
+
+        return "La Palabra Ingresada SI es un Polindromo"
+
+    }
+
+    return "La Palabra Ingresada NO es un Polindromo"
+
+}
+
+//console.log(polindromo("reconocer"))
+
 //8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5.
+
+function EliminarPatron(texto, patron){
+
+    const regex = new RegExp(patron, "g");
+
+    return texto.replace(regex, '').trim();
+
+}
+
+console.log(EliminarPatron("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz"))
