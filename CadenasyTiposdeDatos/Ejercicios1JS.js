@@ -142,5 +142,68 @@ function EliminarPatron(texto, patron){
 //console.log(EliminarPatron("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz"))
 
 //9) Programa una función que obtenga un numero aleatorio entre 501 y 600.
+
+function numeroAleatorio(){
+
+    return Math.floor(Math.random() * (600 - 501 + 1)) + 501;
+
+}
+
+//console.log(numeroAleatorio())
+
 //10) Programa una función que reciba un número y evalúe si es capicúa o no (que se lee igual en un sentido que en otro), pe. miFuncion(2002) devolverá true.
+
+function copicua(num){
+
+    if (typeof num !== "number") {
+        return console.log("El Dato Ingresado no es un número");
+    }
+
+    let conversion = String(num);
+
+    let puntero = conversion.length-1;
+
+    let palabraN = "";
+
+    for (let i = puntero; i >= 0; i--) {
+
+        let caracter = conversion[i];
+
+        palabraN += caracter
+    }
+
+    if (conversion === palabraN){
+
+        return "El Numero Ingresado SI es una Copicua"
+
+    }
+
+    return "El Numero Ingresado NO es una Copicua"
+
+}
+
+//console.log(copicua(2190))
+
 //11) Programa una función que calcule el factorial de un número (El factorial de un entero positivo n, se define como el producto de todos los números enteros positivos desde 1 hasta n), pe. miFuncion(5) devolverá 120.
+
+function factorial(num){
+
+    if (num <= 0){
+
+        return console.log("No se Admite el 0 o Numeros Negativos")
+
+    }
+
+    let factorial = num;
+
+    for(let i = num; i > 1; i--){
+
+        factorial = factorial * (i-1)
+
+    }
+
+    return factorial;
+
+}
+
+console.log(factorial(0))
