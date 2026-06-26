@@ -206,4 +206,65 @@ function factorial(num){
 
 }
 
-console.log(factorial(0))
+//console.log(factorial(4))
+
+//12) Programa una función que determine si un número es primo (aquel que solo es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true.
+
+function numeroPrimo(num){
+
+  if (num <= 1) return false;
+  
+  // Comprobamos divisores desde 2 hasta la raíz cuadrada de num
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) {
+      return false; // Si hay división exacta, no es primo
+    }
+  }
+  
+  return true; // Si no encontró divisores, es primo
+}
+
+//console.log(numeroPrimo(9))
+
+//13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar.
+
+function parInpar (num){
+
+    if (num % 2 === 0){
+
+        return "Ese Numero es Par"
+
+    }
+
+    return "Ese Numero NO es Par"
+
+}
+
+//console.log(parInpar(108766))
+
+//14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.
+
+function conversion(temp, tipo){
+
+    let resultado = 0;
+
+    if(tipo === "C"){
+
+       resultado = (temp * (9/5)) + 32
+
+       return resultado
+
+    }
+    if (tipo === "F"){
+
+        resultado = (temp - 32) * (5/9)
+
+        return resultado
+
+    }
+
+    return "Tipo de Temperatura NO Valido"
+
+}
+
+console.log(conversion(32,"F"))
