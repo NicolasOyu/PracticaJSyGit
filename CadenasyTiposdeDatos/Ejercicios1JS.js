@@ -267,4 +267,66 @@ function conversion(temp, tipo){
 
 }
 
-console.log(conversion(32,"F"))
+//console.log(conversion(32,"F"))
+
+//15) Programa una función para convertir números de base binaria a decimal y viceversa, pe. miFuncion(100,2) devolverá 4 base 10.
+
+function ConversionBinaria(num, tipo){
+
+    let resultado = 0;
+
+    if (tipo === 2){
+
+        let arreglo = num.split('').map(Number).reverse();
+
+        for (let i = 0; i < arreglo.length; i++){
+
+            resultado += arreglo[i] * Math.pow(2,i);
+
+        }
+
+        return resultado;
+
+    }
+
+    if (tipo === 10){
+
+        let arreglo = num.split('').map(Number).reverse();
+
+        for (let i = 0; i < arreglo.length; i++){
+
+            resultado += arreglo[i] * Math.pow(2,i);
+
+        }
+
+        return resultado;
+
+    }
+
+}
+
+//console.log(ConversionBinaria("1111",2))
+
+//16) Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, pe. miFuncion(1000, 20) devolverá 800.
+
+function montoDescuento(precio,descuento){
+
+    return precio - (precio*(descuento/100))
+
+}
+
+//console.log(montoDescuento(1000,20))
+
+//17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).
+
+function fecha(fecha){
+
+    let fechaObj = new Date(fecha);
+
+    let fechaHoy = new Date();
+
+    return fechaHoy.getFullYear() - fechaObj.getFullYear() 
+
+}
+
+console.log(fecha("1984,6,21"))
